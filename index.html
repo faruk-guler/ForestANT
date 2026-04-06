@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi Domain & SSL Checker Monitor | Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <div class="top-status">
+        <div class="last-updated-label">Last Update: <span id="last-updated">--</span></div>
+        <div class="status-badge" id="global-status">System Active</div>
+    </div>
+
+    <main class="container">
+        <header>
+            <h1>Domain & SSL Checker Dashboard</h1>
+            <p class="subtitle">Multi Domain & SSL Checking Monitoring System</p>
+        </header>
+
+        <!-- Dynamic Content Container -->
+        <div id="monitor-content" class="table-view">
+            <div class="loader">Loading...</div>
+        </div>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
