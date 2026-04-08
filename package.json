@@ -1,0 +1,39 @@
+{
+  "name": "antigravity",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "concurrently \"cd backend-go && go run main.go\" \"npm run dev --prefix frontend\"",
+    "build": "npm run build:ui",
+    "build:ui": "npm run build --prefix frontend",
+    "serve": "cd backend-go && go run main.go",
+    "full-clean": "powershell -Command \"Remove-Item -Recurse -Force node_modules, frontend/node_modules, frontend/dist -ErrorAction SilentlyContinue; Get-ChildItem -Path backend-go -Filter *.db* | Remove-Item -Force; Get-ChildItem -Path backend-go -Filter *.exe | Remove-Item -Force\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "axios": "^1.14.0",
+    "better-sqlite3": "^12.8.0",
+    "cors": "^2.8.6",
+    "date-fns": "^4.1.0",
+    "dotenv": "^17.4.1",
+    "express": "^5.2.1",
+    "lucide-react": "^1.7.0",
+    "node-cron": "^4.2.1",
+    "whoiser": "^2.0.0-beta.10"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/node": "^25.5.2",
+    "@types/node-cron": "^3.0.11",
+    "concurrently": "^9.2.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^6.0.2"
+  }
+}
