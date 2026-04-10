@@ -1,6 +1,6 @@
 # ForestANT v3.0 - SSL & Domain Monitoring Platform
 
-<img src=".\ant-main.PNG" alt="alt text" width="880" height="330">
+<img src=".\ant-main.PNG" alt="alt text" width="780" height="330">
 
 ForestANT is a high-performance, enterprise-grade monitoring ecosystem built with **Go** and **React**. It provides real-time oversight of SSL/TLS certificate lifecycles and domain registration health, ensuring absolute continuity for your digital infrastructure.
 
