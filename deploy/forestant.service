@@ -1,0 +1,47 @@
+[Unit]
+Description=ForestANT v3.0 - SSL & Domain Monitoring Platform
+Documentation=https://github.com/faruk-guler/dominant
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=forestant
+Group=forestant
+
+# Çalışma dizini — tüm relative path'ler buradan çözülür
+WorkingDirectory=/opt/forestant
+
+# Binary ve environment
+ExecStart=/opt/forestant/forestant-engine
+EnvironmentFile=/opt/forestant/.env
+
+# Yeniden başlatma politikası
+Restart=always
+RestartSec=5
+StartLimitIntervalSec=60
+StartLimitBurst=5
+
+# Loglar journald'a yönlendirilir (journalctl -u forestant -f ile izle)
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=forestant
+
+# ─── Güvenlik Sertleştirme ───────────────────────────────────────────
+# Root yetkisi kazanımını engelle
+NoNewPrivileges=true
+
+# /opt/forestant dışına yazma izni yok
+ProtectSystem=strict
+ReadWritePaths=/opt/forestant/data /opt/forestant/data.db /opt/forestant/data.db-wal /opt/forestant/data.db-shm
+
+# Gereksiz kernel çağrılarını kapat
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+
+# Geçici dizinler izole
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
